@@ -1,0 +1,284 @@
+:root{
+    font-family: 'Roboto', 'Poppins', sans-serif;
+    --cream-color: #FFFDD0;
+    --true-button-color: rgb(144, 238, 144);
+    --true-button-color-hover: rgb(134, 221, 134);
+
+    --false-button-color: rgb(248, 110, 110);
+    --false-button-color-hover: rgb(202, 103, 103);
+
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    height:100%
+}
+
+/* Header Bar*/
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--cream-color);
+    
+    padding: 10px 0px;
+    box-shadow: 0 5px 10px -3px rgba(0,0,0,0.5);
+
+    
+    padding: 0;
+    margin: 0;
+    height: 100px;
+
+    position: relative;
+}
+
+header button{
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    font-family: 'Roboto', 'Poppins';
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: var(--true-button-color);
+    border: 0;
+}
+
+header button:hover{
+    background-color: var(--true-button-color-hover);
+}
+
+#add-book-modal{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background-color: rgba(0,0,0,0.5);
+
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    
+    
+    background-color: white;
+
+    width: 400px;
+    height: 500px;
+    max-width: 60%;
+    max-height: 90%;
+
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    
+    border-radius: 30px;
+}
+
+.modal-container .heading{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+#add-book-modal form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-grow: 1;    
+    padding: 0px 10%;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    border: 2px solid #000;
+    border-radius: 5px;
+  }
+
+.input-field input{
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', 'Poppins', sans-serif;
+    
+}
+
+label{
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    padding-right: auto;
+}
+
+.check{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem ;
+    
+}
+
+.check input, .check label{
+    flex-grow: 1;
+}
+
+#formRead{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+form button{
+    height: 3rem;
+    width:  10rem;
+
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    cursor: pointer;
+    border-radius: 20px;
+
+    background-color: var(--true-button-color);
+    border: 0;
+}
+
+form button:hover{
+    background-color: var(--true-button-color-hover);
+}
+
+.display-area{
+    background-color: rgb(218, 218, 218);
+    display: block;
+    flex: 1;
+    
+}
+
+.card-container{
+    margin: 10%;
+    margin-top: 100px;
+
+
+    display: grid;
+    justify-content: center;
+    gap: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+
+}
+
+.book-card{
+    display: none;
+    justify-content: space-between;
+
+    background-color: var(--cream-color);
+    text-align: center;
+    height: 300px;
+    border-radius: 1rem;
+
+    padding: 1rem;
+
+}
+
+.book-card *{
+    font-family: 'Roboto', 'Poppins';
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.button-div{
+    display: none;
+    margin-top: -1rem;
+    margin-left: -1rem;
+    max-width: 50px;
+    flex-shrink: 0;
+}
+
+.book-card:hover .button-div{
+    display: block;
+}
+
+#card-close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: bold;
+    font-size: 2rem;
+    
+    padding: 0;
+    margin: 0;
+
+    color: grey;
+}
+
+.book-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow:1;
+}
+
+.book-card .read-button{
+    border: 0;
+
+    height: 3rem;
+    width:  10rem;
+
+    cursor: pointer;
+    border-radius: 20px;
+
+    background-color: var(--false-button-color);
+}
+
+.book-card .read-button:hover {
+    background-color: var(--false-button-color-hover);   
+}
+
+.book-card .true{
+    background-color: var(--true-button-color);
+}
+
+.book-card .true:hover{
+    background-color: var(--true-button-color-hover);   
+}
