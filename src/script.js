@@ -10,34 +10,24 @@ const cardTemplate = document.getElementsByClassName('book-card')[0];
 
 const modalAddBookBtn = document.getElementById('modalAddBook');
 
-
 // Global variable
 let currPos = 0;
 
 // Constructor
-function Book(title, author, pages, read, pos){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.pos = pos;
-}
-
-Book.prototype.info = function(){
-    console.log(this.title + ' by ' + this.author + ', ' + this.pages + ' pages, ' + (this.read ? 'read' : 'not yet read'))
+class Book {
+    constructor (title, author, pages, read, pos){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.pos = pos;
+    }
 }
 
 function addBook(title, author, pages, read, pos){
     let book = new Book(title, author, pages, read, pos);
     myLibrary.push(book);
 }
-
-let b1 = new Book('The Godfather', 'Mario Puzo', '445', false, currPos)
-
-
-let b2 = new Book('Old Man and the Sea', 'Ernest Hemmingway', '129', true);
-//myLibrary.push(b2);
-
 
 // Add book Modal
 addBookBtn.addEventListener('click', () => {
